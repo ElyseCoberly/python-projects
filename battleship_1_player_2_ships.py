@@ -33,7 +33,7 @@ if ship1_row == ship2_row and ship1_col == ship2_col:
         ship2_row = ship2_row - 2
  
 # Player input guesses
-for turn in range(4):
+for turn in range(5):
     
     guess_row = int(raw_input("Guess Row:"))
     guess_col = int(raw_input("Guess Col:"))
@@ -44,14 +44,14 @@ for turn in range(4):
     elif guess_row == ship2_row and guess_col == ship2_col:
         print "Congratulations! You sunk my battleship!"
         break
-    elif (guess_row < 0 or guess_row > 4) or (guess_col < 0 or guess_col > 4):
+    elif (guess_row < 0 or guess_row > 5) or (guess_col < 0 or guess_col > 5):
         print "Oops, that's not even in the ocean."
     elif(board[guess_row][guess_col] == "X"):
         print "You guessed that one already."
     else:
         print "You missed my battleship!"
         board[guess_row][guess_col] = "X"
-    if turn == 3:
+    if turn == 4:
         print "Game Over."
         break
     print "Turn", turn+1
